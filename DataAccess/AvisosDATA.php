@@ -3,8 +3,6 @@
 include '../DataAccess/Conexion.php';
 include '../Domain/Aviso.php';
 
-include '../DataAccess/nada.php';
-
 //Necesario para ver el objeto session
 //session_start();
 
@@ -83,8 +81,8 @@ class AvisoData {
         $fecha = date('Y-m-j');
         try {
             $db = new Conexion();
-            $db->query("delete from avisos where fecha < getDate()");
-            return 'success';
+            $db->query("delete from avisos where fecha <'$fecha'");
+            return 'success2';
         } catch (Exception $exc) {
             return 'error';
         }

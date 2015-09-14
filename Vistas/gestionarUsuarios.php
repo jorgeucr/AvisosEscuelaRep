@@ -128,6 +128,7 @@
                             <th>Nombre completo</th>
                             <th>Usuario</th>
                             <th>Contraseña</th
+                            <th></th
                             <th></th>
                         </tr>
                         <?php

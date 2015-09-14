@@ -89,7 +89,7 @@
                         <nav class="top-bar">
                             <ul class="title-area">
                                 <li class="name logo">
-                                    <a href="#"><img src="img/logo.png"  alt=""></a>
+                                    <a href="#"><img src="img/iconApp.png"  alt=""></a>
                                 </li>
                                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                             </ul>

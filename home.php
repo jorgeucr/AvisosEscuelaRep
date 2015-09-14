@@ -51,7 +51,7 @@
                         <nav class="top-bar">
                             <ul class="title-area">
                                 <li class="name logo">
-                                    <a href="#"><img src="img/logo.png"  alt=""></a>
+                                    <a href="#ventana1" data-toggle="modal"><img src="img/iconApp.png"  alt=""></a>
                                 </li>
                                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
                             </ul>
@@ -96,7 +96,7 @@
                         <h1>Escuela Higuito del Guarco</h1>
                         <span class="subheading">Gestión de avisos para los padres de familia del alumnado</span>
 
-                        <a href="#ventana1" data-toggle="modal"><img src="img/Button.png" alt="" class="img-responsive img-rounded"></a>
+                        <!--<a href="#ventana1" data-toggle="modal"><img src="img/Button.png" alt="" class="img-responsive img-rounded"></a>-->
                         <div class="modal fade" id="ventana1">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -123,6 +123,7 @@
                 </div>
             </header>
 
+            <br/>
             <div id="features" class="section features" data-magellan-destination="features">
                 <div class="row hi-icon-wrap hi-icon-effect-3 hi-icon-effect-3b">
                     <div class="large-6 columns feature">

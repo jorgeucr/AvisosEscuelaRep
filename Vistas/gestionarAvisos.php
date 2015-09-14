@@ -34,6 +34,10 @@
             $result = 'El aviso ha sido borrado correctamente';
             $display = '';
             $tipoMensaje = 'alert-success';
+        } else if ($_GET['result'] == 'success2') {
+            $result = 'Se ejecutó correctamente el borrado de avisos viejos';
+            $display = '';
+            $tipoMensaje = 'alert-success';
         } else if ($_GET['result'] == 'error') {
             $result = 'Error de conección. El aviso no fue borrado';
             $display = '';
@@ -112,6 +116,8 @@
                         </div>
 
                 </div>
+                <a href="../AppNode/Avisos.php?modo=eliminarAvisosViejos">Eliminar avisos anteriores de la fecha: <?php echo (date('Y-m-j')); ?></a>
+                <br/><br/>
                 <!--tabla respons. Se encierra en un div-->
                 <div class="table-responsive">
                     <!--table-striped alterna los colores de cada fila de la tabla
@@ -146,7 +152,7 @@
                             echo ('<td>' . $value->getHora() . '</td>');
                             echo ('<td>' . $value->getCategoria() . '</td>');
                             echo ('<td>' . $value->getUser() . '</td>');
-                            echo ('<td><a href="../AppNode/Avisos.php?modo=eliminarAviso&id='. $value->getId().'">Eliminar</a></td>');
+                            echo ('<td><a href="../AppNode/Avisos.php?modo=eliminarAviso&id=' . $value->getId() . '">Eliminar</a></td>');
                             echo ('</tr>');
                         }
                         ?>

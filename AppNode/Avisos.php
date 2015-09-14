@@ -29,11 +29,17 @@ switch ($modo) {
 
         break;
 
+        
     case 'eliminarAviso':
 
-       
         $eliminarAviso = new AvisoData();
         $result = $eliminarAviso->eliminarAviso($_GET['id']);
+        header('location: ../Vistas/gestionarAvisos.php?result=' . $result . '');
+        break;
+
+    case 'eliminarAvisosViejos':
+        $eliminarAviso = new AvisoData();
+        $result = $eliminarAviso->eliminarAvisosViejos();
         header('location: ../Vistas/gestionarAvisos.php?result=' . $result . '');
         break;
 
