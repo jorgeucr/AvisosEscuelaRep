@@ -30,6 +30,7 @@ if (isset($_GET['error'])) {
     <head>
         <meta charset="UTF-8">
         <title>Login</title>
+        <link rel="shortcut icon" href="img/iconApp.png">
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/styleLogin.css">
@@ -38,7 +39,7 @@ if (isset($_GET['error'])) {
     <body>
         <br/>
         <?php
-        echo ('<div style="' . $display . '" class="alert alert-info">' . $msjError . '</div>');
+        echo ('<div style="' . $display . '" class="alert alert-danger">' . $msjError . '</div>');
         ?>
 
 
@@ -49,7 +50,7 @@ if (isset($_GET['error'])) {
                 <form class="form" action="AppNode/Acceso.php?modo=login" method="post">
                     <input type="text" placeholder="Usuario" name="user">
                     <input type="password" placeholder="Contraseña" name="pass">
-                    <button type="submit" id="login-button">Login</button>
+                    <button type="submit" id="login-button">Entrar</button>
                     <br/>
                 </form>
             </div>

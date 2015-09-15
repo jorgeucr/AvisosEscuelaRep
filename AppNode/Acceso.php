@@ -27,7 +27,7 @@ switch ($modo) {
                     //variables para la sesion
                     $_SESSION['usuario'] = $_POST['user'];
                     $_SESSION['pass'] = $_POST['pass'];
-                    header('location: ../home.php');
+                    header('location: ../Vistas/home.php');
                 } else {
                     //redirecciona junto con un segundo valor de error
                     header('location: ../index.php?error=2');
@@ -52,11 +52,11 @@ switch ($modo) {
 
         if (empty($_POST['nombreRegistro']) or empty($_POST['userRegistro']) or empty($_POST['passRegistro'])) {
             //redirecciona junto con un valor de error por url
-            header('location: ../registrarUsuario.php?error=1');
+            header('location: ../Vistas/registrarUsuario.php?error=1');
         } else {
             $registro = new AccesoDATA($_POST['userRegistro'], $_POST['passRegistro']);
             $result = $registro->registro($_POST['nombreRegistro']);
-            header('location: ../registrarUsuario.php?result=' . $result . '');
+            header('location: ../Vistas/registrarUsuario.php?result=' . $result . '');
         }
         break;
 

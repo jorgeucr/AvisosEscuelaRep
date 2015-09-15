@@ -35,7 +35,7 @@ class AvisoData {
         $userid = $dato['id'];
 
         //TODO CONSTANTES
-        if ($username == 'jorge') {
+        if ($username == 'admescuela') {
             $result = $db->query("select * from avisos order by fecha");
         } else {
             $result = $db->query("select * from avisos where user_id='$userid' order by fecha");
