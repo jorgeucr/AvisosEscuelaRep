@@ -25,7 +25,7 @@
                     <nav class="top-bar">
                         <ul class="title-area">
                             <li class="name logo">
-                                <a class="navbar-brand" href="#ventana1" data-toggle="modal">
+                                <a class="visible-lg visible-md navbar-brand" href="#ventana1" data-toggle="modal">
                                     <img src="../img/iconApp.png">
                                 </a>
                             </li>
@@ -35,6 +35,7 @@
                         <section class="top-bar-section">
                             <ul class="right" id="menu">
                                 <li data-magellan-arrival="contact"><a href="home.php">Home</a></li>
+                                <li><a class="visible-sm visible-xs" href="#ventana1" data-toggle="modal">Acerca de</a></li>
                                 <?php
                                 echo ('<li style="' . $habilitarAdmin . '" data-magellan-arrival="contact"><a href="registrarUsuario.php">Agregar usuario</a></li>');
                                 ?>

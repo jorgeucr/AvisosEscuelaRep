@@ -48,7 +48,7 @@ class AccesoDATA {
     public function getUsuarios() {
         $db = new Conexion();
         //TODO Constantes
-        $sql = ("select * from usuarios where username!='jorge'");
+        $sql = ("select * from usuarios where username!='admescuela'");
         $result = $db->query($sql);
         $array = array();
 

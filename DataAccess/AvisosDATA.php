@@ -79,9 +79,11 @@ class AvisoData {
 
     public function eliminarAvisosViejos() {
         $fecha = date('Y-m-j');
+        $nuevafecha = strtotime('-1 day', strtotime($fecha));
+        $nuevafecha = date('Y-m-j', $nuevafecha);
         try {
             $db = new Conexion();
-            $db->query("delete from avisos where fecha <'$fecha'");
+            $db->query("delete from avisos where fecha <'$nuevafecha'");
             return 'success2';
         } catch (Exception $exc) {
             return 'error';

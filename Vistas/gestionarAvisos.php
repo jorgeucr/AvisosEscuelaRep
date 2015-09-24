@@ -44,15 +44,20 @@
             $tipoMensaje = 'alert-danger';
         }
     }
+
+    $fecha = date('Y-m-j');
+    $nuevafecha = strtotime('-1 day', strtotime($fecha));
+    $nuevafecha = date('Y-m-j', $nuevafecha);
+
     unset($_GET['result']);
     include './header.php';
     ?>
- <!--Como se usa navbar-fixed-top hasy que agregar este estilo para que el texto nunca se oculte detras de la barra de navegacion-->
-        <style>
-            body{
-                padding-top:100px;
-            }
-        </style>
+    <!--Como se usa navbar-fixed-top hasy que agregar este estilo para que el texto nunca se oculte detras de la barra de navegacion-->
+    <style>
+        body{
+            padding-top:100px;
+        }
+    </style>
 
     <div class="container">
         <h2>Gestión de avisos</h2>
@@ -72,7 +77,7 @@
                 </div>
 
         </div>
-        <a href="../AppNode/Avisos.php?modo=eliminarAvisosViejos">Eliminar avisos anteriores de la fecha: <?php echo (date('Y-m-j')); ?></a>
+        <a href="../AppNode/Avisos.php?modo=eliminarAvisosViejos">Eliminar avisos anteriores de la fecha: <?php echo ($nuevafecha); ?></a>
         <br/><br/>
         <!--tabla respons. Se encierra en un div-->
         <div class="table-responsive">
