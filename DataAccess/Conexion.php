@@ -13,7 +13,6 @@ class Conexion extends mysqli {
         //chequeo de la conexion
         //$this->connect_errno ? die('Error con la conexion') : $x = 'Conectado';
         //echo $x;
-        unset($x);
     }
 
     public function recorrer($param) {

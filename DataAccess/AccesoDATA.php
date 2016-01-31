@@ -1,6 +1,7 @@
 <?php
 
 include '../DataAccess/Conexion.php';
+include '../DataAccess/ConMySQL.php';
 include '../Domain/Usuario.php';
 class AccesoDATA {
 
@@ -11,45 +12,50 @@ class AccesoDATA {
         $this->user = $user;
         $this->pass = $pass;
     }
+    
 
     public function login() {
-        $db = new Conexion();
-        $sql = $db->query("Select username, pass from usuarios "
+        $db = new ConMySQL();
+        $sqlq= $db->query("Select username, pass from usuarios "
                 . "where username='$this->user' and pass='$this->pass';");
-        //array asociativo
-        $dato = $db->recorrer($sql);
-
-        $result = $dato['username'] == $this->user and $dato['pass'] == $this->pass ? true : false;
-        return $result;
+        
+        return $result = $sqlq->num_rows>0? true : false;;
     }
 
     public function registro($nombreRegistro) {
-        $db = new Conexion();
-        $result = '';
-
-        //consulta que determinará si el usuario ya existe
-        $sql = $db->query("Select username, pass from usuarios "
-                . "where username='$this->user';");
-        $dato = $db->recorrer($sql);
-        //en caso de que el usuario no exista
-        if ($dato['username']!=$this->user) {
-            try {
+        $db = new ConMySQL();
+        
+        $sqlq = "Select username, pass from usuarios "
+                . "where username='$this->user';";
+        $result = $db->query($sql);
+        
+        if ($result->num_rows > 0) {
+            return $result = 3;
+        }  else {
+             //LLAMADO A UN PROCESO ALMACENADO
+           $con = new ConMySQL();
+            $llamado = mysql_query("call sp_insert_user('$this->user','$this->pass','$nombreRegistro')",$con->getCon());
+            if($llamado>=1){
+                return $result = 1;
+            }else{
+                return $result = 3;
+            }
+        }     
+        /*try {
                 $sql = $db->query("insert into usuarios (username,pass,nombre) "
                         . "values('$this->user','$this->pass','$nombreRegistro');");
                 return $result = 1;
             } catch (Exception $exc) {
                return $result = 2;
-            }
-        } else {
-            return $result = 3;
-        }
+            }*/
     }
     
     public function getUsuarios() {
-        $db = new Conexion();
+        $db = new ConMySQL();
         //TODO Constantes
         $sql = ("select * from usuarios where username!='admescuela'");
         $result = $db->query($sql);
+        
         $array = array();
 
         if ($result->num_rows > 0) {
@@ -70,7 +76,7 @@ class AccesoDATA {
     
     public function eliminarUsuario($id) {
         try {
-            $db = new Conexion();
+            $db = new ConMySQL();
             $db->query("delete from usuarios where id='$id'");
             return 'success';
         } catch (Exception $exc) {

@@ -12,6 +12,7 @@ switch ($modo) {
         //Obtener datos de pag html
         $_POST['user'];
         $_POST['pass'];
+        
         //chequea si estan definidas
         if (isset($_POST['pass']) and isset($_POST['user'])) {
             //evalua si la variable esta vacia

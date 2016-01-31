@@ -48,6 +48,7 @@ if (isset($_GET['error'])) {
                 <h1>Bienvenido</h1>
 
                 <form class="form" action="AppNode/Acceso.php?modo=login" method="post">
+                    
                     <input type="text" placeholder="Usuario" name="user">
                     <input type="password" placeholder="Contraseña" name="pass">
                     <button type="submit" id="login-button">Entrar</button>

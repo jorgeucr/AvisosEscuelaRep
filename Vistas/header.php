@@ -14,6 +14,7 @@
         <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'/>
         <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:600' rel='stylesheet' type='text/css'/>
 
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="../js/vendor/custom.modernizr.js"></script>
 
 
